@@ -1,0 +1,19 @@
+object 394a01d4b1b64cc14eaec83eb65dc3e1fead7ef7
+type commit
+tag v0.1.5
+tagger Aleksa Sarai <cyphar@cyphar.com> 1583165542 +1100
+
+v0.1.5
+
+This release fixes two issues that were found by @davidscherer where
+catatonit would hang if pid1 died in unexpected ways. Users are
+recommended to update.
+
+Signed-off-by: Aleksa Sarai <cyphar@cyphar.com>
+-----BEGIN PGP SIGNATURE-----
+
+iIgEABYIADAWIQSxZm6dtfE8gxLLfYqdlLljIbnQEgUCXl0wqhIcY3lwaGFyQGN5
+cGhhci5jb20ACgkQnZS5YyG50BLzRgEAk86ZfnuXSqVvDAEul4JaN4o/J4cqmPpX
+qq68i4aXY8EA/3lcVnTiNwigI91tMqHMJqPMGp58COkl1NiEHIir2ikE
+=gpse
+-----END PGP SIGNATURE-----
