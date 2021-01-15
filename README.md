@@ -33,6 +33,22 @@ will try to use the sub-reaper support in the kernel. You can pass `-g` if you
 want signals to be forwarded to the entire process group of your spawned
 process (otherwise it's just forwarded to the process spawned).
 
+Example how to run catatonit in podman and how to make shure catatonit run:
+
+```
+$ podman run --init -it fedora
+[root@45df6417b763 /]# /dev/init --version
+tini version 0.1.5_catatonit
+```
+
+Example how to run catatonit in docker and make shure catatonit run:
+
+```
+$ docker run --init -v /usr/libexec/catatonit/catatonit:/usr/sbin/docker-init -it fedora
+[root@da13d905d877 /]# /usr/sbin/docker-init --version
+tini version 0.1.5_catatonit
+```
+
 ### Installation ###
 
 catatonit uses autotools for building, so building is a fairly standard:
