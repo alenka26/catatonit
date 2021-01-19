@@ -1,12 +1,14 @@
 Name: catatonit
 Version: 0.1.5
-Release: alt1
+Release: alt2
 Summary: A signal-forwarding process manager for containers
 License: GPLv3+
 Group: System/Configuration/Boot and Init
 URL: https://github.com/openSUSE/catatonit
 Source0: %name-%version.tar
-#Patch0: %name-%version-alt.patch
+Patch0: %name-%version-alt.patch
+
+%define _libexecdir /usr/libexec
 BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: file
@@ -27,7 +29,7 @@ signalfd(2)) and has no additional features.
 
 %prep
 %setup -q
-#patch -p1
+%patch -p1
 
 %build
 autoreconf -fi
@@ -56,5 +58,9 @@ ln -s %_libexecdir/%name/%name %buildroot%_libexecdir/podman/%name
 %_libexecdir/podman/%name
 
 %changelog
+* Tue Jan 19 2021 Alenka Glukhovskaya <alenka@altlinux.org> 0.1.5-alt2
+- Override default _libexecdir, so that podman can initiate catatonite
+  in the default directory
+
 * Wed Aug 05 2020 Alenka Glukhovskaya <alenka@altlinux.org> 0.1.5-alt1
 - Initial build for Sisyphus
